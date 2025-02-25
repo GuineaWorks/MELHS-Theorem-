@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MELHS Theorem and Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label, input, button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>The MELHS Theorem</h1>
+    <h2>What is the MELHS Theorem?</h2>
+    <p>The MELHS Theorem states that the MELHS Roof Functionality on a scale of 1-10 multiplied by the MELHS Internet Speed in a value of 1-10 will always equal the MELHS Constant</p>
+    
+    <h2>How We Calculate It.</h2>
+    <p>We first find the MELHS internet speed (S). We then convert it to a corresponding value from 1-10. By dividing the MELHS Constant (C) by our converted Internet Speed, we receive our Roof Functionality (F) output on a scale of 1-10.</p>
+    
+    <h2>Calculating</h2>
+    <a href="https://fast.com" target="_blank">Click on this link, after running the test come back to this page and enter the result in Mbps.</a>
+    
+    <br>
+    <label for="num1">Wifi Speed in Mbps:</label>
+    <input type="number" id="num1" placeholder="Enter numerical value">
+    <br>
+    <button onclick="calculate()">Calculate</button>
+    
+    <h2>Roof Functionality on a scale of 1-10: <span id="result">0</span></h2>
+
+    <script>
+        function calculate() {
+            // Get the value from the input field
+            const num1 = parseFloat(document.getElementById('num1').value);
+            
+            // Check if the input value is valid
+            if (isNaN(num1) || num1 <= 0) {
+                alert("Please enter a valid positive number for the speed.");
+                return;
+            }
+
+            // The MELHS Constant C (You may want to adjust this constant as per your theorem)
+            const MELHS_Constant = 10;
+
+            // Calculate the result
+            const result = MELHS_Constant / (num1 / 10);
+
+            // Update the result in the DOM with two decimal places
+            document.getElementById('result').textContent = result.toFixed(2);
+        }
+    </script>
+</body>
+</html>
